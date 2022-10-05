@@ -16,7 +16,7 @@ Installation
 ------------
 
 Using [Packer](https://github.com/wbthomason/packer.nvim):
-```
+```lua
 use({
   'https://github.com/nat-418/tabbot.nvim',
   config = function()
