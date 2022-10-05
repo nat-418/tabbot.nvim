@@ -33,7 +33,7 @@ M.setup = function()
   end
 
   vim.api.nvim_create_user_command(
-    'MGo',
+    'TabbotGo',
     function(opts)
       M.go(tonumber(opts.args))
     end,
@@ -44,7 +44,7 @@ M.setup = function()
   )
 
   vim.api.nvim_create_user_command(
-    'MSend',
+    'TabbotSend',
     function(opts) M.send(tonumber(opts.args)) end,
     {
       nargs = 1,
