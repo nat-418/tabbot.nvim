@@ -53,7 +53,6 @@ M.cmd = function(args)
   if subcmd == 'send'  then M.send(arg1) end
 end
 
-
 M.setup = function()
   local completion = function(_, _, _)
     return {
@@ -66,7 +65,7 @@ M.setup = function()
   vim.api.nvim_create_user_command(
     'Tabbot',
     function(args) M.cmd(args) end,
-    {complete = completion}
+    {nargs = '*', complete = completion}
   )
 end
 
