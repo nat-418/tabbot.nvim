@@ -3,7 +3,7 @@ local M = {}
 M.clear = function()
   local last_buffer = vim.fn.bufnr('$')
 
-  for buffer_number = 1, last_buffer, 1 do
+  for buffer_number = last_buffer, 1, -1 do
     local buffer_name   = vim.fn.bufname(buffer_number)
     local buffer_exists = vim.fn.bufexists(buffer_number)
     local buffer_valid  = vim.api.nvim_buf_is_valid(buffer_number)
@@ -12,9 +12,9 @@ M.clear = function()
       local buffer_one_line = vim.api.nvim_buf_line_count(buffer_number) == 1
 
       if buffer_one_line then
-        local line_one_contents = vim.api.nvim_get_current_line()
+        local line_contents = vim.api.nvim_buf_get_lines(buffer_number, 0, 1, 0)
 
-        if line_one_contents == '' then
+        if unpack(line_contents) == '' then
           vim.api.nvim_buf_delete(buffer_number, {force = true})
         end
       end
