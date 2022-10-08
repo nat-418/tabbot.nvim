@@ -32,3 +32,9 @@ Configuration
 -------------
 
 There is no configuration.
+
+See also
+--------
+
+* [bufala.nvim](https://github.com/nat-418/bufala.nvim) to work with buffers
+  and splits like in a tiling window manager.
