@@ -4,7 +4,7 @@ tabbot.nvim
 ![Abbot of Cui Yun Gong monastery plays Xiangqi](./abbot.jpg)
 
 Tabbot is a simple Neovim plugin that makes working with tabs easier.
-It pulls out the "tabs as workspaces" concept from my 
+Tabbot pulls out the "tabs as workspaces" concept from my 
 [dbm.nvim](https://github.com/nat-418/dbm.nvim) plugin and refines it,
 shipping only one command:
 
