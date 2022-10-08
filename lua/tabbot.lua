@@ -9,15 +9,19 @@ M.clear = function()
     local buffer_valid  = vim.api.nvim_buf_is_valid(buffer_number)
 
     if buffer_name == '' and buffer_exists and buffer_valid then
-      local buffer_no_lines = vim.api.nvim_buf_line_count(buffer_number) == 0
+      local buffer_one_line = vim.api.nvim_buf_line_count(buffer_number) == 1
 
-      if buffer_no_lines then
-        return vim.api.nvim_buf_delete(buffer_number, {force = true})
+      if buffer_one_line then
+        local line_one_contents = vim.cmd('call getline(1)')
+
+        if line_one_contents == '' then
+          vim.api.nvim_buf_delete(buffer_number, {force = true})
+        end
       end
     end
-r end
+  end
 
-  return 0
+  return 1
 end
 
 M.go = function(target_tab_number)
