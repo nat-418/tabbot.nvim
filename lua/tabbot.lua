@@ -19,7 +19,7 @@ end
 M.go = function(target_tab_number)
   local tab_table = vim.api.nvim_list_tabpages()
 
-  if target_tab_number > #tab_table then
+  if tonumber(target_tab_number) > #tab_table then
     vim.api.nvim_command('$tabnew')
 
     return M.go(target_tab_number) -- Proper tail call 😎
