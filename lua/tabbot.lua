@@ -9,17 +9,21 @@ M.clear = function()
     local buffer_valid  = vim.api.nvim_buf_is_valid(buffer_number)
 
     if buffer_name == '' and buffer_exists and buffer_valid then
-      vim.api.nvim_buf_delete(buffer_number, {force = true})
-    end
-  end
+      local buffer_no_lines = vim.api.nvim_buf_line_count(buffer_number) == 0
 
-  return 1
+      if buffer_no_lines then
+        return vim.api.nvim_buf_delete(buffer_number, {force = true})
+      end
+    end
+r end
+
+  return 0
 end
 
 M.go = function(target_tab_number)
   local tab_table = vim.api.nvim_list_tabpages()
 
-  if target_tab_number > #tab_table then
+  if tonumber(target_tab_number) > #tab_table then
     vim.api.nvim_command('$tabnew')
 
     return M.go(target_tab_number) -- Proper tail call 😎
