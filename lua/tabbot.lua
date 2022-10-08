@@ -12,7 +12,7 @@ M.clear = function()
       local buffer_one_line = vim.api.nvim_buf_line_count(buffer_number) == 1
 
       if buffer_one_line then
-        local line_one_contents = vim.cmd('call getline(1)')
+        local line_one_contents = vim.api.nvim_get_current_line()
 
         if line_one_contents == '' then
           vim.api.nvim_buf_delete(buffer_number, {force = true})
