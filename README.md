@@ -5,12 +5,15 @@ tabbot.nvim
 
 This is a simple Neovim plugin that makes working with tabs easier.
 It pulls out the "tabs as workspaces" concept from my 
-[DBM](https://github.com/nat-418/dbm.nvim) plugin and refines it,
-shipping only two commands:
+[dbm.nvim](https://github.com/nat-418/dbm.nvim) plugin and refines it,
+shipping only one command:
 
-* `:TabbotGo {number}` Switches to the `{number}`th tab.
-* `:TabbotSend {number}` Switches to tab `{number}` and loads the current
-   buffer there.
+* `:Tabbot {subcommand} {number}`
+
+The currently implemented subcommands are:
+* `clear`             Clears out any empty buffers and therefore empty tabs.
+* `go   {tab_number}` Move user to tab number `{tab_number}`.
+* `send {tab_number}` Send current buffer to tab number `{tab_number}`.
 
 Installation
 ------------
@@ -25,3 +28,7 @@ use({
 })
 ```
 
+Configuration
+-------------
+
+There is no configuration.
