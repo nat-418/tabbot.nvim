@@ -1,7 +1,5 @@
-tabbot.nvim
-===========
-
-![Abbot of Cui Yun Gong monastery plays Xiangqi](./abbot.jpg)
+tabbot.nvim ☯️
+==============
 
 Tabbot is a simple Neovim plugin that makes working with tabs easier.
 Tabbot pulls out the "tabs as workspaces" concept from my 
