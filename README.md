@@ -16,14 +16,8 @@ The currently implemented subcommands are:
 Installation
 ------------
 
-Using [Packer](https://github.com/wbthomason/packer.nvim):
-```lua
-use({
-  'https://github.com/nat-418/tabbot.nvim',
-  config = function()
-    require('tabbot').setup()
-  end
-})
+```sh
+$ git clone --depth 1 https://github.com/nat-418/tabbot.nvim ~/.local/share/nvim/site/pack/tabbot/start/tabbot.nvim
 ```
 
 Configuration
